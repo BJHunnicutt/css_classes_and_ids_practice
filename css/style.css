@@ -1,1 +1,103 @@
 /*  style.css */
+@-webkit-keyframes wiggle {
+	0% {
+		-webkit-transform:rotate(4deg);
+	}
+	50% {
+		-webkit-transform:rotate(-4deg);
+	}
+	100% {
+		-webkit-transform:rotate(4deg);
+	}
+}
+
+
+body {
+  font-family: Papyrus;
+  font-size: 14pt;
+  /*text-align: left;*/
+}
+
+.picture-gallery {
+  list-style-type: none;
+}
+
+.picture-gallery li {
+  margin: 0 10px 10px 0;
+  float: left;
+  /*background-color: blue;*/
+}
+
+aside {
+  width: 30%;
+  float: left;
+}
+
+.description {
+  clear: left;   /*cancels the float: left  and starts on a new line*/
+}
+
+/*.smallfont {
+  font-size: 50%;
+}*/
+
+
+.main-body {
+  font-family: Garamond;
+  font-size: 1.0em; /*this will be 2.0X the size of the containing element*/
+}
+
+
+.main-title {
+  font-family: Garamond;
+  font-size: 2.5em;  /*if rem instead of em since this is inside .main-body, this will be 2.0*2.5 times the size of the containing element*/
+
+  /*This will make the word come at you slowly: set all the base properties there,
+  and then in hover set the ending properties.*/
+  -webkit-transition: color 5s, -webkit-transform 2s;
+  font-size: 6em;
+  transition: transform .2s;
+}
+
+
+/* mouse over link */
+.main-title:hover {
+    color: hotpink;
+    transition-duration: 20s;
+    transform: scale(10); /*this makes the text come at you */
+    /*transform: rotate(2180deg); this makes the text rotate slowly  */
+}
+
+
+.picture-gallery li:nth-of-type(1) img:hover {
+  -webkit-animation: wiggle 0.2s infinite;
+}
+
+
+
+/*.picture-gallery li:nth-of-type(2) img {
+  transform: rotate(-20deg);
+}
+
+.picture-gallery li:nth-of-type(3) img {
+  transform: rotate(-10deg);
+}*/
+
+
+.picture-gallery img {
+  /*-webkit-transition: -webkit-transform .2s ease-in-out;*/
+  transition: transform 2s ease-in-out;
+}
+
+
+.picture-gallery img:hover {
+  transition-duration: 10s;
+  /*-webkit-transform: rotate(180deg);*/
+  transform: rotate(2180deg);/*this makes the text rotate slowly  */
+}
+
+
+/*article h3:first-child {
+  font-family: fantasy;
+  font-size: 12pt
+}*/
